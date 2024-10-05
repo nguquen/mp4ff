@@ -37,6 +37,7 @@ func parseOptions() {
 	flag.StringVar(&opts.scheme, "scheme", "cenc", "cenc or cbcs. Required if initFilePath empty")
 	flag.StringVar(&opts.psshFile, "pssh", "", "file with one or more pssh box(es) in binary format. Will be added at end of moov box")
 	flag.BoolVar(&opts.version, "version", false, "Get mp4ff version")
+	flag.Parse()
 
 	flag.Usage = func() {
 		parts := strings.Split(os.Args[0], "/")
