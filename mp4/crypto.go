@@ -657,7 +657,7 @@ func ExtractInitProtectData(inSeg *InitSegment) (*InitProtectData, error) {
 		switch box := c.(type) {
 		case *VisualSampleEntryBox:
 			switch box.Type() {
-			case "avc1":
+			case "encv":
 				ipd.ProtFunc, err = getAVCProtFunc(box.AvcC)
 				if err != nil {
 					return nil, fmt.Errorf("get AVC protect func: %w", err)
